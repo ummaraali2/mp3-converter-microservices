@@ -1,0 +1,19 @@
+Interservice communication :
+1. Synchronous :
+
+Client service sending the request awaits the response from the service that it is sending request to. Client service can't do anything  while it waits for this response. It is blocked until it receives a response.
+
+Gateway service sends an http post request to auth service to login a user and retrieve a jwt for that user. Our gateway service is blocked until the auth service either returns a jwt or error. 
+So communication between our api gateway and auth service is Synchronous which makes those two services tightlycoupled.
+
+2. Asynchronous :
+
+The client service does not need to await the response of the downstream request. Therefore this is considered a non blocking request. This can be achieved by a queue.
+Gateway communicates with our converter serivce.
+So it uses the asynchronous method in order to avoid blocking of the gateway service for long periods.
+
+The gateway service communicate directly with the converter service and instead uses the queue therefore it does not depend on the converter services' response. ANd the are loosely coupled.
+
+
+auth :
+index.js:
