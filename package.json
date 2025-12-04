@@ -1,0 +1,20 @@
+{
+  "name": "mp3-converter-service",
+  "version": "1.0.0",
+  "description": "File conversion service for MP3 Converter",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "multer": "^1.4.5-lts.1",
+    "fluent-ffmpeg": "^2.1.2",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
